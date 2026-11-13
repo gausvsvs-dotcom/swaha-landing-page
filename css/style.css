@@ -1,0 +1,710 @@
+/* Global Variables & Reset */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-color);
+    overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Zain:wght@400;700&display=swap');
+
+/* Intro Overlay*/
+.video-intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f3f3f2 !important;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.video-intro-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-gif-file {
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.btn-skip-intro {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 24px;
+    background: #133252;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background 0.3s ease;
+}
+
+.btn-skip-intro:hover {
+    background: #EF4C25;
+}
+
+.hero-section {
+    position: relative;
+    background-image: url('../assets/img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%), rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.hero-logo {
+    max-height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+}
+
+.tracking-widest {
+    letter-spacing: 8px;
+    font-size: 1.1rem;
+}
+
+.text-orange {
+    color: #EF4C25 !important;
+}
+
+.hero-title {
+    font-family: 'Zain', sans-serif;
+    font-size: clamp(6rem, 12vw, 13rem);
+    line-height: 0.8;
+    letter-spacing: 6px;
+}
+
+.hero-desc {
+    max-width: 480px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.btn-gradient-orange {
+    background: linear-gradient(63deg, #212F3C 0%, #923F2F 33%, #EF4C25 97%);
+    border: none;
+    transition: opacity 0.3s ease;
+}
+
+.btn-gradient-orange:hover {
+    opacity: 0.9;
+    color: #fff;
+}
+
+.hero-bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 113px;
+    background: linear-gradient(180deg, rgba(246, 241, 235, 0) 0%, #F6F1EB 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+/* Section 2: The Swaha Story Styling */
+.story-section {
+    background-color: #F6F1EB;
+    position: relative;
+    overflow: hidden;
+}
+
+.badge-story {
+    background-color: rgba(239, 76, 37, 0.1);
+    color: #EF4C25;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+}
+
+.story-title {
+    font-family: 'Zain', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #212529;
+}
+
+.story-desc {
+    font-family: 'Calibri', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #999999;
+}
+
+.story-highlight {
+    font-size: 1.1rem;
+}
+
+.image-collage {
+    max-width: 615px;
+    height: 460px;
+}
+
+.main-hotel-img {
+    width: 100%;
+    max-width: 520px;
+    height: 380px;
+    object-fit: cover;
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+
+.sticky-note {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 210px;
+    z-index: 3;
+}
+
+.card-badge-overlay {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 270px;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .image-collage {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .main-hotel-img, .sticky-note, .card-badge-overlay {
+        position: relative;
+        top: unset;
+        left: unset;
+        right: unset;
+        bottom: unset;
+        width: 100%;
+    }
+}
+/* Section 3: Our Type Of Rooms */
+.rooms-scroll-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 24px;
+    width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.rooms-scroll-container > .col-md-4 {
+    flex: 0 0 350px !important;
+    min-width: 350px !important;
+    width: 350px !important;
+    max-width: 350px !important;
+}
+
+.rooms-scroll-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.rooms-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.rooms-scroll-container::-webkit-scrollbar-thumb {
+    background: #133252;
+    border-radius: 10px;
+}
+
+.indicator-bar {
+    width: 30px;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.indicator-bar.active {
+    background: #133151;
+}
+
+/* Section 4: Dining Experiences Styling */
+.dining-section {
+    background-color: #ffffff;
+}
+
+.dining-header-bg {
+    background-color: #133252;
+    padding-bottom: 120px;
+}
+
+.badge-dining {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #133252;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+.dining-title {
+    font-family: 'Zain', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.dining-subtitle {
+    font-family: 'Calibri', sans-serif;
+    font-size: 1.05rem;
+    max-width: 800px;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+}
+
+.dining-cards-container {
+    position: relative;
+    z-index: 2;
+    margin-top: -140px;
+}
+
+.dining-card {
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dining-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08) !important;
+}
+
+.dining-img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.dining-card-title {
+    font-family: 'Calibri', sans-serif;
+    color: #133252;
+    font-size: 1.5rem;
+}
+
+.dining-card-desc {
+    font-family: 'Calibri', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 991px) {
+    .dining-header-bg {
+        padding-bottom: 110px;
+    }
+
+    .dining-cards-container {
+        margin-top: -120px;
+    }
+
+    .dining-img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 575px) {
+    .dining-header-bg {
+        padding-bottom: 90px;
+    }
+
+    .dining-cards-container {
+        margin-top: -100px;
+    }
+
+    .dining-title {
+        font-size: 2.5rem;
+    }
+
+    .dining-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .dining-img {
+        height: 240px;
+    }
+}
+
+/* Section 5: Wellness & Spa Styling */
+.wellness-section {
+    background-color: #ffffff;
+}
+
+.wellness-content {
+    width: 100%;
+    max-width: 100%;
+}
+
+.badge-wellness {
+    display: inline-block;
+    background-color: rgba(239, 76, 37, 0.1);
+    color: #EF4C25;
+    padding: 8px 16px;
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+    border-radius: 4px;
+}
+
+.wellness-title {
+    font-family: 'Zain', sans-serif;
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 700;
+    color: #133252;
+    line-height: 1.2;
+}
+
+.wellness-desc {
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    color: #999999;
+    letter-spacing: 0.48px;
+    line-height: 1.6;
+}
+
+.wellness-outer-card {
+    width: 100%;
+    max-width: 310px;
+    margin: 0 auto;
+    background-color: #133252 !important;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.wellness-inner-card {
+    min-height: 380px;
+    padding: 35px 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #133252;
+    border: 1px solid #E1E1E1;
+    border-radius: 16px;
+}
+
+.icon-circle {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 50% !important;
+}
+
+.wellness-inner-card .icon-circle img {
+    width: 52px !important;
+    height: 52px !important;
+    object-fit: contain;
+}
+
+.wellness-inner-card .card-title {
+    font-family: 'Calibri', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.wellness-inner-card .card-text {
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.5;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .wellness-outer-card {
+        max-width: 100%;
+    }
+
+    .wellness-inner-card {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 575px) {
+    .wellness-title {
+        font-size: 38px;
+    }
+
+    .wellness-desc {
+        font-size: 15px;
+    }
+
+    .wellness-inner-card {
+        min-height: 340px;
+        padding: 30px 20px !important;
+    }
+
+    .wellness-inner-card .card-title {
+        font-size: 22px;
+    }
+}
+
+/* Section 6: Neighborhood Styling */
+.neighborhood-section {
+    background-color: #FAF9F7 !important;
+}
+
+.badge-neighborhood {
+    display: inline-block;
+    background-color: rgba(239, 76, 37, 0.1);
+    color: #EF4C25;
+    padding: 8px 16px;
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+    letter-spacing: 0.16px;
+}
+
+.neighborhood-title {
+    font-family: 'Zain', sans-serif;
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.15;
+}
+
+.neighborhood-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 50%;
+    min-width: 85px;
+    min-height: 85px;
+}
+
+@media (max-width: 991px) {
+    .neighborhood-title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 575px) {
+    .neighborhood-title {
+        font-size: 36px;
+    }
+
+    .badge-neighborhood {
+        font-size: 14px;
+    }
+
+    .neighborhood-icon-circle {
+        min-width: 65px;
+        min-height: 65px;
+    }
+}
+
+
+/* Section 7: Special Offers Styling */
+.offer-section {
+    background-color: #FAF9F7 !important;
+}
+
+.offer-banner {
+    min-height: 319px;
+    background-image: linear-gradient(90deg, #133252 20%, rgba(102, 102, 102, 0) 100%), url('../assets/img/offer-bg.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px !important;
+}
+
+.offer-title {
+    font-family: 'Zain', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.offer-desc {
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.48px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.price-box .start-text {
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.20px;
+    color: #ffffff;
+}
+
+.price-value .currency {
+    font-family: 'Calibri', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 0.40px;
+    color: #ffffff;
+}
+
+.price-value .amount {
+    font-family: 'Calibri', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.40px;
+    color: #ffffff;
+}
+
+.btn-book-stay {
+    padding: 16px 32px;
+    background: linear-gradient(63deg, #212F3C 0%, #923F2F 33%, #EF4C25 97%);
+    border-radius: 50px;
+    color: white;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.20px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(239, 76, 37, 0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-book-stay:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    color: white;
+}
+/* Footer Section Styling */
+.footer-section {
+    background-color: #FAF9F7;
+    box-shadow: 0px -16px 50px rgba(0, 0, 0, 0.06);
+}
+
+.footer-watermark {
+    width: 853px;
+    max-width: 100%;
+    height: auto;
+    opacity: 0.95;
+    z-index: 1;
+}
+
+.footer-heading {
+    font-family: 'Zain', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 1.2px;
+    color: #000000;
+}
+
+.footer-text {
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.5;
+}
+
+.footer-link {
+    color: #666666;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #EF4C25;
+}
+
+.social-icon-btn {
+    transition: transform 0.2s ease;
+}
+
+.social-icon-btn:hover {
+    transform: translateY(-2px);
+}
+
+.newsletter-input {
+    border: 1px solid #DDDDDD;
+    border-right: none;
+    border-radius: 10px 0 0 10px !important;
+    padding: 12px 14px;
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.64px;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+
+.newsletter-input::placeholder {
+    color: #999999;
+}
+
+.newsletter-input:focus {
+    box-shadow: none;
+    border-color: #EF4C25;
+}
+
+.newsletter-btn {
+    background-color: #EF4C25;
+    border: 1px solid #EF4C25;
+    border-radius: 0 10px 10px 0 !important;
+    width: 46px;
+    transition: background-color 0.2s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: #d63d18;
+    border-color: #d63d18;
+}
+
+.footer-divider {
+    border-top: 1px solid #E5E5E5;
+    opacity: 1;
+}
+
+.footer-copyright {
+    font-family: 'Calibri', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.4px;
+    color: #000000;
+}
