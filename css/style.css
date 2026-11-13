@@ -84,7 +84,6 @@ body {
 
 .hero-logo {
     max-height: 80px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 10px 20px;
 }
 
@@ -215,59 +214,43 @@ body {
     }
 }
 /* Section 3: Our Type Of Rooms */
-.rooms-scroll-container {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 24px;
-    width: 100%;
-    overflow-x: auto !important;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
+.rooms-section {
+    background-color: #ffffff !important;
 }
 
-.rooms-scroll-container > .col-md-4 {
-    flex: 0 0 350px !important;
-    min-width: 350px !important;
-    width: 350px !important;
-    max-width: 350px !important;
+.rooms-section .section-main-title {
+    font-family: 'Zain', sans-serif;
 }
 
-.rooms-scroll-container::-webkit-scrollbar {
-    height: 6px;
+.rooms-section p, 
+.rooms-section span, 
+.rooms-section a {
+    font-family: 'Calibri', sans-serif;
 }
 
-.rooms-scroll-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+.rooms-section h2, 
+.rooms-section h3, 
+.footer-heading {
+    font-family: 'Zain', sans-serif !important;
 }
 
-.rooms-scroll-container::-webkit-scrollbar-thumb {
-    background: #133252;
-    border-radius: 10px;
+.rooms-section p, 
+.rooms-section span, 
+.rooms-section a,
+.footer-text,
+.footer-link {
+    font-family: 'Calibri', sans-serif !important;
 }
-
-.indicator-bar {
-    width: 30px;
-    height: 6px;
-    background: rgba(0, 0, 0, 0.10);
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.indicator-bar.active {
-    background: #133151;
-}
-
 /* Section 4: Dining Experiences Styling */
 .dining-section {
-    background-color: #ffffff;
+    background-color: #FAF9F7; 
 }
 
 .dining-header-bg {
     background-color: #133252;
-    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-bottom: 150px !important; /
 }
-
 .badge-dining {
     display: inline-block;
     background-color: #ffffff;
@@ -277,6 +260,7 @@ body {
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 4px;
+    font-family: 'Calibri', sans-serif;
 }
 
 .dining-title {
@@ -292,80 +276,76 @@ body {
     max-width: 800px;
     letter-spacing: 0.5px;
     line-height: 1.7;
+    color: #ffffff;
 }
 
 .dining-cards-container {
+    max-width: 1320px !important; /* Lebar maksimal kontainer diperbesar */
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
     position: relative;
     z-index: 2;
-    margin-top: -140px;
+    margin-top: -120px; /* Jarak naiknya card ke area biru */
 }
 
 .dining-card {
     height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dining-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08) !important;
+    border-radius: 20px !important;
+    border: 1px solid #DDDDDD !important;
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .dining-img {
     display: block;
     width: 100%;
-    height: 320px;
+    height: 300px !important;
     object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .dining-card-title {
     font-family: 'Calibri', sans-serif;
-    color: #133252;
+    color: #133252 !important;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .dining-card-desc {
     font-family: 'Calibri', sans-serif;
     font-size: 1rem;
     line-height: 1.7;
+    color: #999999 !important;
 }
 
 @media (max-width: 991px) {
     .dining-header-bg {
-        padding-bottom: 110px;
+        padding-bottom: 180px !important;
     }
-
     .dining-cards-container {
-        margin-top: -120px;
-    }
-
-    .dining-img {
-        height: 280px;
+        margin-top: -110px;
     }
 }
 
 @media (max-width: 575px) {
     .dining-header-bg {
-        padding-bottom: 90px;
+        padding-bottom: 140px !important;
     }
-
     .dining-cards-container {
-        margin-top: -100px;
+        margin-top: -80px;
     }
-
     .dining-title {
         font-size: 2.5rem;
     }
-
-    .dining-subtitle {
-        font-size: 0.95rem;
-    }
-
     .dining-img {
         height: 240px;
     }
 }
-
 /* Section 5: Wellness & Spa Styling */
 .wellness-section {
     background-color: #ffffff;
