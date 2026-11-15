@@ -1,27 +1,9 @@
-/* Global Variables & Reset */
-:root {
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --dark-color: #212529;
-    --light-color: #f8f9fa;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--dark-color);
-    overflow-x: hidden;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Zain:wght@400;700&display=swap');
-
-/* Intro Overlay*/
 .video-intro-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
+    inset: 0;
+    width: 100%;
     height: 100vh;
-    background-color: #f3f3f2 !important;
+    background-color: #f2f3f3;
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -36,7 +18,8 @@ body {
 }
 
 .intro-gif-file {
-    max-width: 400px;
+    width: 100%;
+    max-width: 900px;
     height: auto;
     object-fit: contain;
 }
@@ -47,7 +30,7 @@ body {
     right: 30px;
     padding: 10px 24px;
     background: #133252;
-    color: #ffffff;
+    color: #fff;
     border: none;
     border-radius: 50px;
     font-family: 'Calibri', sans-serif;
@@ -61,63 +44,243 @@ body {
     background: #EF4C25;
 }
 
+@font-face {
+    font-family: 'Zain';
+    src: url('../fonts/Zain-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zain';
+    src: url('../fonts/Zain-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: 'Calibri', Arial, sans-serif;
+    background-color: #F6F1EB;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    --navy: #133252;
+    --orange: #EF4C25;
+    --cream: #F6F1EB;
+    --light: #F8F8F8;
+    --text-gray: #888888;
+}
+
 .hero-section {
     position: relative;
+    width: 100%;
+    min-height: 950px;
     background-image: url('../assets/img/hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-.hero-bg-overlay {
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+.hero-navbar {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%), rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    z-index: 5;
 }
 
-.hero-logo {
-    max-height: 80px;
-    padding: 10px 20px;
+.brand-logo {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 330px;
 }
 
-.tracking-widest {
-    letter-spacing: 8px;
-    font-size: 1.1rem;
+.brand-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-.text-orange {
-    color: #EF4C25 !important;
+.language-wrapper {
+    position: absolute;
+    right: 5%;
+    top: 28px;
+}
+
+.language-btn {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: 'Calibri', Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.language-btn:hover,
+.language-btn:focus {
+    color: #fff;
+}
+
+.language-btn::after {
+    margin-left: 12px;
+}
+
+.language-wrapper .dropdown-menu {
+    background-color: #F6F1EB;
+    border: none;
+    border-radius: 3px;
+    min-width: 155px;
+    padding: 8px 0;
+}
+
+.language-wrapper .dropdown-item {
+    font-family: 'Calibri', Arial, sans-serif;
+    font-size: 17px;
+    color: #212F3C;
+    padding: 9px 16px;
+}
+
+.language-wrapper .dropdown-item:hover {
+    background-color: #EDE3DA;
+}
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 5%;
+}
+
+.hero-content {
+    width: 100%;
+    padding-top: 245px;
+    margin-left: 0;
+}
+
+.hero-subtitle {
+    color: var(--orange);
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin-bottom: 0;
 }
 
 .hero-title {
-    font-family: 'Zain', sans-serif;
-    font-size: clamp(6rem, 12vw, 13rem);
-    line-height: 0.8;
-    letter-spacing: 6px;
-}
-
-.hero-desc {
-    max-width: 480px;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
-.btn-gradient-orange {
-    background: linear-gradient(63deg, #212F3C 0%, #923F2F 33%, #EF4C25 97%);
-    border: none;
-    transition: opacity 0.3s ease;
-}
-
-.btn-gradient-orange:hover {
-    opacity: 0.9;
     color: #fff;
+    font-family: 'Zain', sans-serif !important;
+    font-size: clamp(190px, 12.5vw, 185px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 13px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.hero-description {
+    color: #fff;
+    font-family: 'Calibri', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
+.hero-bottom {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 110px;
+}
+
+.hero-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.price-label {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.price-value {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.price-value strong {
+    font-weight: 700;
+}
+
+.booking-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 195px;
+    min-height: 56px;
+    padding: 13px 22px;
+    background: linear-gradient(
+        63deg,
+        #212F3C 0%,
+        #923F2F 33%,
+        #EF4C25 97%
+    );
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Calibri', Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: 0.3s ease;
+}
+
+.booking-btn:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    filter: brightness(1.1);
 }
 
 .hero-bottom-gradient {
@@ -126,565 +289,1764 @@ body {
     left: 0;
     width: 100%;
     height: 113px;
-    background: linear-gradient(180deg, rgba(246, 241, 235, 0) 0%, #F6F1EB 100%);
-    z-index: 2;
-    pointer-events: none;
-}
-/* Section 2: The Swaha Story Styling */
-.story-section {
-    background-color: #F6F1EB;
-    position: relative;
-    overflow: hidden;
-}
-
-.badge-story {
-    background-color: rgba(239, 76, 37, 0.1);
-    color: #EF4C25;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    border-radius: 4px;
-}
-
-.story-title {
-    font-family: 'Zain', sans-serif;
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    line-height: 1.1;
-    color: #212529;
-}
-
-.story-desc {
-    font-family: 'Calibri', sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #999999;
-}
-
-.story-highlight {
-    font-size: 1.1rem;
-}
-
-.image-collage {
-    max-width: 615px;
-    height: 460px;
-}
-
-.main-hotel-img {
-    width: 100%;
-    max-width: 520px;
-    height: 380px;
-    object-fit: cover;
-    position: absolute;
-    top: 40px;
-    left: 0;
-}
-
-.sticky-note {
-    position: absolute;
-    top: 0px;
-    left: 20px;
-    width: 210px;
+    background: linear-gradient(
+        180deg,
+        rgba(246, 241, 235, 0) 0%,
+        #F6F1EB 100%
+    );
     z-index: 3;
 }
 
-.card-badge-overlay {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    width: 270px;
-    z-index: 2;
+.story-section {
+    width: 100%;
+    padding: 75px 4%;
+    background-color: var(--cream);
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .image-collage {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .main-hotel-img, .sticky-note, .card-badge-overlay {
-        position: relative;
-        top: unset;
-        left: unset;
-        right: unset;
-        bottom: unset;
-        width: 100%;
-    }
-}
-/* Section 3: Our Type Of Rooms */
-.rooms-section {
-    background-color: #ffffff !important;
+.story-container {
+    width: 100%;
+    max-width: 1650px;
+    min-height: 560px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2%;
 }
 
-.rooms-section .section-main-title {
-    font-family: 'Zain', sans-serif;
+.story-content {
+    flex: 0 0 40%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.rooms-section p, 
-.rooms-section span, 
-.rooms-section a {
-    font-family: 'Calibri', sans-serif;
+.story-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
 
-.rooms-section h2, 
-.rooms-section h3, 
-.footer-heading {
-    font-family: 'Zain', sans-serif !important;
-}
-
-.rooms-section p, 
-.rooms-section span, 
-.rooms-section a,
-.footer-text,
-.footer-link {
-    font-family: 'Calibri', sans-serif !important;
-}
-/* Section 4: Dining Experiences Styling */
-.dining-section {
-    background-color: #FAF9F7; 
-}
-
-.dining-header-bg {
-    background-color: #133252;
-    padding-top: 60px;
-    padding-bottom: 150px !important; /
-}
-.badge-dining {
+.story-label {
     display: inline-block;
-    background-color: #ffffff;
-    color: #133252;
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 10px 14px;
+    background-color: rgba(239, 76, 37, 0.10);
+    color: var(--orange);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 17px;
     font-weight: 500;
     letter-spacing: 1px;
-    border-radius: 4px;
-    font-family: 'Calibri', sans-serif;
 }
 
-.dining-title {
-    font-family: 'Zain', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+.story-heading h2 {
+    max-width: 680px;
+    margin: 0;
+    color: #171717;
+    font-family: 'Zain', sans-serif !important;
+    font-size: clamp(55px, 4.5vw, 72px);
     font-weight: 700;
-    color: #ffffff;
-}
-
-.dining-subtitle {
-    font-family: 'Calibri', sans-serif;
-    font-size: 1.05rem;
-    max-width: 800px;
+    line-height: 1.05;
     letter-spacing: 0.5px;
-    line-height: 1.7;
-    color: #ffffff;
 }
 
-.dining-cards-container {
-    max-width: 1320px !important; /* Lebar maksimal kontainer diperbesar */
+.story-description {
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
+    max-width: 680px;
+    margin: 0;
+    color: var(--text-gray);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+}
+
+.story-images {
     position: relative;
+    flex: 0 0 57%;
+    max-width: 1000px;
+    height: 630px;
+}
+
+.story-main-image {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 87%;
+    height: 530px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.story-note-image {
+    position: absolute;
+    top: 0;
+    left: -4%;
+    width: 47%;
+    height: 330px;
+    object-fit: contain;
     z-index: 2;
-    margin-top: -120px; /* Jarak naiknya card ke area biru */
 }
 
-.dining-card {
-    height: 100%;
-    border-radius: 20px !important;
-    border: 1px solid #DDDDDD !important;
-    background-color: #ffffff;
+.story-logo-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 41%;
+    height: 275px;
+    object-fit: cover;
+    border-radius: 20px;
+    z-index: 3;
+}
+
+.rooms-section {
+    width: 100%;
+    padding: 100px 3%;
+    background-color: var(--light);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.dining-img {
+.rooms-container {
+    width: 100%;
+    max-width: 1650px;
+    margin: 0 auto;
+}
+
+.rooms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 42px;
+}
+
+.rooms-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.rooms-label {
+    display: inline-block;
+    padding: 13px 17px;
+    background-color: rgba(239, 76, 37, 0.10);
+    color: var(--orange);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+.rooms-heading h2 {
+    margin: 0;
+    color: #111;
+    font-family: 'Zain', sans-serif !important;
+    font-size: clamp(45px, 3.5vw, 67px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 1px;
+}
+
+.rooms-heading p {
+    margin: 0;
+    color: #999;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+}
+
+/* ROOM CARDS */
+
+.rooms-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.room-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DDD;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--light);
+}
+
+.room-image {
     display: block;
     width: 100%;
-    height: 300px !important;
+    height: 320px;
     object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
 }
 
-.dining-card-title {
-    font-family: 'Calibri', sans-serif;
-    color: #133252 !important;
-    font-size: 1.5rem;
+.room-card-content {
+    flex: 1;
+    min-height: 210px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.room-card-content h3 {
+    margin: 0;
+    color: #111;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 24px;
     font-weight: 700;
 }
 
-.dining-card-desc {
-    font-family: 'Calibri', sans-serif;
-    font-size: 1rem;
+.room-card-content p {
+    margin: 0;
+    color: #999;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
     line-height: 1.7;
-    color: #999999 !important;
 }
 
-@media (max-width: 991px) {
-    .dining-header-bg {
-        padding-bottom: 180px !important;
-    }
-    .dining-cards-container {
-        margin-top: -110px;
-    }
+.room-contact {
+    margin-top: auto;
+    color: var(--orange);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-@media (max-width: 575px) {
-    .dining-header-bg {
-        padding-bottom: 140px !important;
-    }
-    .dining-cards-container {
-        margin-top: -80px;
-    }
-    .dining-title {
-        font-size: 2.5rem;
-    }
-    .dining-img {
-        height: 240px;
-    }
+.room-contact:hover {
+    color: var(--navy);
 }
-/* Section 5: Wellness & Spa Styling */
-.wellness-section {
-    background-color: #ffffff;
+.rooms-controls {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.rooms-arrow {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 21px;
+    color: #111;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.wellness-content {
+.rooms-arrow:hover {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+}
+
+.rooms-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.pagination-line {
+    width: 38px;
+    height: 8px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.10);
+}
+
+.pagination-line.active {
+    background: var(--navy);
+}
+
+.dining-section {
+    position: relative;
     width: 100%;
-    max-width: 100%;
+    padding: 55px 4% 80px;
+    background-color: var(--light);
+    overflow: hidden;
 }
 
-.badge-wellness {
+.dining-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 345px;
+    background-color: var(--navy);
+    z-index: 0;
+}
+
+.dining-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.dining-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.dining-label {
     display: inline-block;
-    background-color: rgba(239, 76, 37, 0.1);
-    color: #EF4C25;
-    padding: 8px 16px;
-    font-family: 'Calibri', sans-serif;
+    padding: 9px 12px;
+    background-color: #fff;
+    color: var(--navy);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.dining-header h2 {
+    margin: 12px 0 8px;
+    color: #fff;
+    font-family: 'Zain', sans-serif !important;
+    font-size: clamp(42px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.dining-header p {
+    margin: 0;
+    color: #fff;
+    font-family: 'Inter', Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    letter-spacing: 0.16px;
-    border-radius: 4px;
-}
-
-.wellness-title {
-    font-family: 'Zain', sans-serif;
-    font-size: clamp(36px, 5vw, 48px);
-    font-weight: 700;
-    color: #133252;
-    line-height: 1.2;
-}
-
-.wellness-desc {
-    font-family: 'Calibri', sans-serif;
-    font-size: 16px;
-    color: #999999;
-    letter-spacing: 0.48px;
+    letter-spacing: 0.2px;
     line-height: 1.6;
 }
 
-.wellness-outer-card {
+.dining-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
     width: 100%;
-    max-width: 310px;
-    margin: 0 auto;
-    background-color: #133252 !important;
-    border-radius: 20px !important;
-    overflow: hidden;
 }
 
-.wellness-inner-card {
-    min-height: 380px;
-    padding: 35px 20px !important;
+.dining-card {
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #133252;
-    border: 1px solid #E1E1E1;
-    border-radius: 16px;
 }
 
-.icon-circle {
-    width: 80px !important;
-    height: 80px !important;
-    min-width: 80px;
-    min-height: 80px;
-    border-radius: 50% !important;
+.dining-image {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
-.wellness-inner-card .icon-circle img {
-    width: 52px !important;
-    height: 52px !important;
-    object-fit: contain;
+.dining-card-content {
+    padding: 20px 18px 0;
 }
 
-.wellness-inner-card .card-title {
-    font-family: 'Calibri', sans-serif;
-    font-size: 24px;
+.dining-card-content h3 {
+    margin: 0 0 8px;
+    color: var(--navy);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 22px;
     font-weight: 700;
-    color: #ffffff;
 }
 
-.wellness-inner-card .card-text {
-    font-family: 'Calibri', sans-serif;
+.dining-card-content p {
+    margin: 0;
+    color: #888;
+    font-family: 'Inter', Arial, sans-serif;
     font-size: 16px;
-    color: #ffffff;
-    line-height: 1.5;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.1px;
+}
+
+.wellness-section {
+    width: 100%;
+    padding: 75px 7%;
+    background-color: var(--light);
+}
+
+.wellness-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.wellness-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.wellness-label {
+    padding: 10px 17px;
+    margin-bottom: 18px;
+    background-color: rgba(239, 76, 37, 0.10);
+    color: var(--orange);
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.wellness-title {
+    margin: 0 0 12px;
+    color: var(--navy);
+    font-family: 'Zain', sans-serif !important;
+    font-size: clamp(42px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.wellness-description {
+    max-width: 540px;
+    margin: 0;
+    color: #888;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+}
+
+.wellness-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.wellness-card {
+    flex: 1;
+    min-width: 0;
+    padding: 25px;
+    background-color: var(--navy);
+    border-radius: 20px;
+}
+
+.wellness-card-inner {
+    width: 100%;
+    min-height: 400px;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: 1px solid #E1E1E1;
+    border-radius: 20px;
     text-align: center;
 }
 
-@media (max-width: 991px) {
-    .wellness-outer-card {
-        max-width: 100%;
-    }
-
-    .wellness-inner-card {
-        min-height: 360px;
-    }
+.wellness-icon {
+    width: 82px;
+    height: 82px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
-@media (max-width: 575px) {
-    .wellness-title {
-        font-size: 38px;
-    }
-
-    .wellness-desc {
-        font-size: 15px;
-    }
-
-    .wellness-inner-card {
-        min-height: 340px;
-        padding: 30px 20px !important;
-    }
-
-    .wellness-inner-card .card-title {
-        font-size: 22px;
-    }
+.wellness-icon img {
+    width: 49px;
+    height: 49px;
+    object-fit: contain;
 }
 
-/* Section 6: Neighborhood Styling */
+.wellness-card h3 {
+    max-width: 190px;
+    margin: 0;
+    color: #fff;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.wellness-card p {
+    margin: 0;
+    color: #fff;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
 .neighborhood-section {
-    background-color: #FAF9F7 !important;
+    width: 100%;
+    padding: 50px 4%;
+    background-color: #FAF9F7;
+    overflow: hidden;
 }
 
-.badge-neighborhood {
-    display: inline-block;
-    background-color: rgba(239, 76, 37, 0.1);
-    color: #EF4C25;
-    padding: 8px 16px;
+.neighborhood-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.neighborhood-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.neighborhood-label {
+    padding: 10px;
+    background-color: rgba(239, 76, 37, 0.10);
+    color: var(--orange);
     font-family: 'Calibri', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    border-radius: 4px;
     letter-spacing: 0.16px;
 }
 
 .neighborhood-title {
-    font-family: 'Zain', sans-serif;
-    font-size: clamp(36px, 5vw, 50px);
-    font-weight: 700;
-    color: #000000;
-    line-height: 1.15;
-}
-
-.neighborhood-icon-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    border-radius: 50%;
-    min-width: 85px;
-    min-height: 85px;
-}
-
-@media (max-width: 991px) {
-    .neighborhood-title {
-        font-size: 42px;
-    }
-}
-
-@media (max-width: 575px) {
-    .neighborhood-title {
-        font-size: 36px;
-    }
-
-    .badge-neighborhood {
-        font-size: 14px;
-    }
-
-    .neighborhood-icon-circle {
-        min-width: 65px;
-        min-height: 65px;
-    }
-}
-
-
-/* Section 7: Special Offers Styling */
-.offer-section {
-    background-color: #FAF9F7 !important;
-}
-
-.offer-banner {
-    min-height: 319px;
-    background-image: linear-gradient(90deg, #133252 20%, rgba(102, 102, 102, 0) 100%), url('../assets/img/offer-bg.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 40px !important;
-}
-
-.offer-title {
-    font-family: 'Zain', sans-serif;
+    width: 100%;
+    margin: 0;
+    color: #000;
+    font-family: 'Zain', sans-serif !important;
     font-size: 50px;
     font-weight: 700;
-    line-height: 52px;
-    letter-spacing: 1px;
-    color: #ffffff;
+    line-height: 1.14;
 }
 
-.offer-desc {
+.neighborhood-list {
+    width: 100%;
+    max-width: 505px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.neighborhood-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.neighborhood-icon {
+    width: 84px;
+    height: 84px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.neighborhood-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.neighborhood-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.neighborhood-text h3 {
+    margin: 0;
+    color: #000;
+    font-family: 'Calibri', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.neighborhood-text p {
+    margin: 0;
+    color: #888;
     font-family: 'Calibri', sans-serif;
     font-size: 16px;
-    letter-spacing: 0.48px;
-    color: #ffffff;
-    opacity: 0.9;
-}
-
-.price-box .start-text {
-    font-family: 'Calibri', sans-serif;
-    font-size: 20px;
     font-weight: 400;
-    letter-spacing: 0.20px;
-    color: #ffffff;
+    line-height: 1.5;
 }
 
-.price-value .currency {
-    font-family: 'Calibri', sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    letter-spacing: 0.40px;
-    color: #ffffff;
+.neighborhood-images {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-shrink: 0;
 }
 
-.price-value .amount {
-    font-family: 'Calibri', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: 0.40px;
-    color: #ffffff;
+.neighborhood-image {
+    width:  min(25vw, 380px);
+    height: 455px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
-.btn-book-stay {
-    padding: 16px 32px;
-    background: linear-gradient(63deg, #212F3C 0%, #923F2F 33%, #EF4C25 97%);
-    border-radius: 50px;
-    color: white;
-    font-family: 'Calibri', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.20px;
-    text-align: center;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(239, 76, 37, 0.3);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.image-two {
+    margin-top: 60px;
 }
 
-.btn-book-stay:hover {
-    transform: translateY(-2px);
-    opacity: 0.95;
-    color: white;
-}
-/* Footer Section Styling */
-.footer-section {
+.offer-section {
+    width: 100%;
+    padding: 50px 4%;
     background-color: #FAF9F7;
-    box-shadow: 0px -16px 50px rgba(0, 0, 0, 0.06);
 }
 
-.footer-watermark {
-    width: 853px;
-    max-width: 100%;
-    height: auto;
-    opacity: 0.95;
+.offer-container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 319px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 40px 74px;
+    overflow: hidden;
+    border-radius: 40px;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(19, 50, 82, 0.98) 20%,
+            rgba(19, 50, 82, 0.65) 48%,
+            rgba(19, 50, 82, 0.05) 100%
+        ),
+        url('../assets/img/offer-bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.offer-content {
+    position: relative;
     z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.footer-heading {
-    font-family: 'Zain', sans-serif;
+.offer-content h2 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Zain', sans-serif !important;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.04;
+    letter-spacing: 1px;
+}
+
+.offer-content p {
+    margin: 10px 0 0;
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+}
+
+/* OFFER PRICE AND BUTTON */
+
+.offer-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.offer-price {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+}
+
+.offer-price span {
+    font-size: 20px;
+    letter-spacing: 0.2px;
+}
+
+.offer-price div {
+    font-size: 34px;
+    letter-spacing: 0.4px;
+}
+
+.offer-price strong {
+    font-weight: 700;
+}
+
+.offer-button {
+    min-width: 164px;
+    min-height: 48px;
+    padding: 12px 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: linear-gradient(
+        63deg,
+        #212F3C 0%,
+        #923F2F 33%,
+        #EF4C25 97%
+    );
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.offer-button:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+
+.footer-section {
+    position: relative;
+    width: 100%;
+    padding: 50px 4%;
+    background-color: #FAF9F7;
+    background-image: url('../assets/img/footer-watermark.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 780px auto;
+    box-shadow: 0 -16px 50px rgba(0, 0, 0, 0.06);
+}
+
+.footer-container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer-main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.footer-brand {
+    width: 295px;
+    min-height: 194px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-logo {
+    width: 257px;
+    height: 121px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.footer-brand p {
+    width: 100%;
+    margin: 0;
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-column h3 {
+    margin: 0;
+    color: #000;
+    font-family: 'Zain', sans-serif !important;
     font-size: 30px;
     font-weight: 400;
     line-height: 48px;
     letter-spacing: 1.2px;
-    color: #000000;
 }
 
-.footer-text {
+/* CONTACT */
+
+.footer-contact {
+    width: 329px;
+    flex-shrink: 0;
+}
+
+.footer-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.footer-links p {
+    width: 100%;
+    margin: 0;
+    color: #666;
     font-family: 'Calibri', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
-    color: #666666;
+    line-height: 1.5;
+}
+.footer-social {
+    flex-shrink: 0;
+}
+
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-social-icons a {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social-icons img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+}
+.footer-newsletter {
+    width: 270px;
+    min-height: 194px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newsletter-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.newsletter-content p {
+    margin: 0;
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
     line-height: 1.5;
 }
 
-.footer-link {
-    color: #666666;
-    transition: color 0.2s ease;
+/* NEWSLETTER FORM */
+
+.newsletter-form {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
 }
 
-.footer-link:hover {
-    color: #EF4C25;
-}
-
-.social-icon-btn {
-    transition: transform 0.2s ease;
-}
-
-.social-icon-btn:hover {
-    transform: translateY(-2px);
-}
-
-.newsletter-input {
-    border: 1px solid #DDDDDD;
+.newsletter-form input {
+    width: calc(100% - 45px);
+    height: 44px;
+    min-width: 0;
+    padding: 0 10px;
+    border: 1px solid #DDD;
     border-right: none;
-    border-radius: 10px 0 0 10px !important;
-    padding: 12px 14px;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    background: transparent;
+    color: #333;
     font-family: 'Calibri', sans-serif;
     font-size: 16px;
+}
+
+.newsletter-form input::placeholder {
+    color: #999;
     letter-spacing: 0.64px;
-    color: #333333;
-    background-color: #FFFFFF;
 }
 
-.newsletter-input::placeholder {
-    color: #999999;
+.newsletter-form button {
+    width: 45px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--orange);
+    color: #fff;
+    cursor: pointer;
 }
 
-.newsletter-input:focus {
-    box-shadow: none;
-    border-color: #EF4C25;
+.newsletter-form button span {
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1;
+}
+.footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-.newsletter-btn {
-    background-color: #EF4C25;
-    border: 1px solid #EF4C25;
-    border-radius: 0 10px 10px 0 !important;
-    width: 46px;
-    transition: background-color 0.2s ease;
-}
-
-.newsletter-btn:hover {
-    background-color: #d63d18;
-    border-color: #d63d18;
-}
-
-.footer-divider {
-    border-top: 1px solid #E5E5E5;
-    opacity: 1;
-}
-
-.footer-copyright {
+.footer-bottom p {
+    margin: 0;
+    color: #000;
     font-family: 'Calibri', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    line-height: 22.4px;
-    color: #000000;
+    line-height: 1.4;
+}
+
+.footer-credit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.footer-credit span {
+    color: #000;
+    font-family: 'Calibri', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.footer-credit img {
+    width: 101px;
+    height: 23px;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   Semua aturan tablet dan mobile dikumpulkan
+   di bagian ini.
+========================================= */
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+    /* HERO */
+    .hero-section {
+        min-height: 780px;
+    }
+
+    .hero-title {
+        font-size: clamp(90px, 12vw, 125px);
+    }
+
+    /* STORY */
+    .story-section {
+        padding: 75px 5%;
+    }
+
+    .story-container {
+        gap: 30px;
+    }
+
+    .story-content {
+        flex-basis: 42%;
+    }
+
+    .story-images {
+        height: 360px;
+    }
+
+    .story-main-image {
+        height: 300px;
+    }
+
+    .story-note-image {
+        height: 180px;
+    }
+
+    .story-logo-image {
+        height: 150px;
+    }
+
+    /* ROOMS */
+    .rooms-section {
+        padding: 75px 5%;
+    }
+
+    .room-image {
+        height: 230px;
+    }
+
+    .room-card-content {
+        padding: 16px;
+    }
+
+    /* DINING */
+    .dining-section {
+        padding: 50px 5% 65px;
+    }
+
+    .dining-image {
+        height: 320px;
+    }
+
+    /* WELLNESS */
+    .wellness-section {
+        padding: 60px 5%;
+    }
+
+    .wellness-container {
+        gap: 25px;
+    }
+
+    .wellness-card {
+        padding: 15px;
+    }
+
+    .wellness-card-inner {
+        min-height: 340px;
+    }
+
+    /* NEIGHBORHOOD */
+    .neighborhood-section {
+        padding: 50px 5%;
+    }
+
+    .neighborhood-container {
+        gap: 20px;
+    }
+
+    .neighborhood-image {
+        width: 25vw;
+        height: 380px;
+    }
+
+    .neighborhood-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .neighborhood-icon img {
+        width: 43px;
+        height: 43px;
+    }
+
+    /* OFFER */
+    .offer-container {
+        padding: 40px 50px;
+    }
+
+    /* FOOTER */
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1.2fr 1.2fr 0.8fr;
+        gap: 35px 25px;
+    }
+
+    .footer-brand,
+    .footer-contact,
+    .footer-newsletter {
+        width: 100%;
+    }
+
+    .footer-newsletter {
+        min-height: 180px;
+    }
+}
+
+
+/* TABLET KECIL DAN HP */
+
+@media (max-width: 767px) {
+
+    /* HERO */
+    .hero-section {
+        min-height: 680px;
+        background-position: center;
+    }
+
+    .hero-navbar {
+        height: 100px;
+        padding: 0 6%;
+    }
+
+    .brand-logo {
+        width: 180px;
+    }
+
+    .language-wrapper {
+        top: 20px;
+        right: 6%;
+    }
+
+    .language-btn {
+        font-size: 14px;
+    }
+
+    .hero-container {
+        padding: 0 6%;
+    }
+
+    .hero-content {
+        padding-top: 220px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        letter-spacing: 4px;
+        margin-bottom: -5px;
+    }
+
+    .hero-title {
+        font-size: clamp(65px, 17vw, 105px);
+        letter-spacing: 4px;
+    }
+
+    .hero-description {
+        max-width: 500px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .hero-bottom {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 40px;
+    }
+
+    .price-label {
+        font-size: 15px;
+    }
+
+    .price-value {
+        font-size: 30px;
+    }
+
+    .booking-btn {
+        min-width: 150px;
+        min-height: 45px;
+        font-size: 16px;
+    }
+
+    .hero-bottom-gradient {
+        height: 85px;
+    }
+
+    /* STORY */
+    .story-section {
+        padding: 60px 6%;
+    }
+
+    .story-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 35px;
+    }
+
+    .story-content {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .story-heading h2 {
+        font-size: clamp(40px, 9vw, 52px);
+    }
+
+    .story-description {
+        font-size: 17px;
+    }
+
+    .story-images {
+        width: 100%;
+        max-width: 100%;
+        height: 320px;
+    }
+
+    .story-main-image {
+        top: 30px;
+        width: 85%;
+        height: 260px;
+    }
+
+    .story-note-image {
+        width: 32%;
+        height: 150px;
+    }
+
+    .story-logo-image {
+        width: 42%;
+        height: 125px;
+    }
+
+    /* ROOMS */
+    .rooms-section {
+        padding: 60px 6%;
+    }
+
+    .rooms-header {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .rooms-heading h2 {
+        font-size: clamp(38px, 8vw, 48px);
+    }
+
+    .rooms-heading p {
+        font-size: 16px;
+    }
+
+    .rooms-card-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .room-image {
+        height: 300px;
+    }
+
+    .room-card-content {
+        min-height: 170px;
+        padding: 18px;
+    }
+
+    .room-card-content h3 {
+        font-size: 20px;
+    }
+
+    .room-card-content p {
+        font-size: 15px;
+    }
+
+    .rooms-controls {
+        gap: 12px;
+    }
+
+    .rooms-arrow {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* DINING */
+    .dining-section {
+        padding: 45px 6% 60px;
+    }
+
+    .dining-section::before {
+        height: 300px;
+    }
+
+    .dining-header {
+        margin-bottom: 30px;
+    }
+
+    .dining-header h2 {
+        font-size: 40px;
+    }
+
+    .dining-header p {
+        max-width: 420px;
+        font-size: 15px;
+    }
+
+    .dining-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .dining-image {
+        height: 320px;
+    }
+
+    .dining-card-content {
+        padding: 16px 5px 0;
+    }
+
+    .dining-card-content h3 {
+        font-size: 20px;
+    }
+
+    .dining-card-content p {
+        font-size: 15px;
+    }
+
+    /* WELLNESS */
+    .wellness-section {
+        padding: 50px 6%;
+    }
+
+    .wellness-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .wellness-info {
+        text-align: center;
+        align-items: center;
+    }
+
+    .wellness-title {
+        font-size: 40px;
+    }
+
+    .wellness-description {
+        max-width: 600px;
+        font-size: 16px;
+    }
+
+    .wellness-cards {
+        gap: 14px;
+    }
+
+    .wellness-card {
+        padding: 12px;
+    }
+
+    .wellness-card-inner {
+        min-height: 280px;
+        padding: 20px 12px;
+    }
+
+    .wellness-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .wellness-icon img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .wellness-card h3 {
+        font-size: 18px;
+    }
+
+    .wellness-card p {
+        font-size: 14px;
+    }
+
+    /* NEIGHBORHOOD */
+    .neighborhood-section {
+        padding: 50px 6%;
+    }
+
+    .neighborhood-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .neighborhood-content {
+        width: 100%;
+    }
+
+    .neighborhood-title {
+        font-size: 42px;
+    }
+
+    .neighborhood-list {
+        max-width: 100%;
+    }
+
+    .neighborhood-item {
+        gap: 15px;
+    }
+
+    .neighborhood-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .neighborhood-icon img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .neighborhood-text h3 {
+        font-size: 20px;
+    }
+
+    .neighborhood-text p {
+        font-size: 15px;
+    }
+
+    .neighborhood-images {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .neighborhood-image {
+        width: calc(50% - 7.5px);
+        height: 300px;
+    }
+
+    .image-two {
+        margin-top: 35px;
+    }
+
+    /* OFFER */
+    .offer-section {
+        padding: 40px 6%;
+    }
+
+    .offer-container {
+        min-height: 300px;
+        padding: 35px;
+        border-radius: 28px;
+        background-position: center;
+    }
+
+    .offer-content h2 {
+        font-size: 42px;
+    }
+
+    .offer-content p {
+        font-size: 16px;
+    }
+
+    .offer-bottom {
+        margin-top: 28px;
+        gap: 15px;
+    }
+
+    .offer-price span {
+        font-size: 17px;
+    }
+
+    .offer-price div {
+        font-size: 29px;
+    }
+
+    .offer-button {
+        min-width: 145px;
+        min-height: 44px;
+        font-size: 16px;
+    }
+
+    /* FOOTER */
+    .footer-section {
+        padding: 45px 6%;
+        background-size: 600px auto;
+    }
+
+    .footer-container {
+        gap: 30px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 25px;
+    }
+
+    .footer-brand {
+        min-height: auto;
+    }
+
+    .footer-logo {
+        width: 210px;
+        height: 100px;
+    }
+
+    .footer-brand p,
+    .footer-links p,
+    .newsletter-content p {
+        font-size: 15px;
+    }
+
+    .footer-column h3 {
+        font-size: 27px;
+        line-height: 1.3;
+    }
+
+    .footer-newsletter {
+        min-height: 170px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-bottom p,
+    .footer-credit span {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .intro-gif-file {
+        width: 95%;
+    }
+    .btn-skip-intro {
+        right: 18px;
+        bottom: 20px;
+        padding: 9px 18px;
+        font-size: 14px;
+    }
+
+    .hero-section {
+        min-height: 620px;
+    }
+    .brand-logo {
+        width: 155px;
+    }
+    .hero-content {
+        padding-top: 215px;
+    }
+    .hero-title {
+        font-size: 72px;
+        letter-spacing: 3px;
+    }
+    .hero-description {
+        font-size: 15px;
+    }
+    .hero-bottom {
+        gap: 14px;
+    }
+    .price-value {
+        font-size: 27px;
+    }
+    .booking-btn {
+        min-width: 135px;
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .story-section {
+        padding: 55px 5%;
+    }
+    .story-heading h2 {
+        font-size: 40px;
+    }
+    .story-label {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+    .story-description {
+        font-size: 16px;
+    }
+    .story-images {
+        height: 270px;
+    }
+    .story-main-image {
+        height: 220px;
+    }
+    .story-note-image {
+        height: 120px;
+    }
+    .story-logo-image {
+        height: 105px;
+    }
+
+    .rooms-section {
+        padding: 50px 5%;
+    }
+    .rooms-heading h2 {
+        font-size: 38px;
+    }
+    .rooms-heading p {
+        font-size: 15px;
+    }
+    .room-image {
+        height: 250px;
+    }
+    .room-card-content p {
+        font-size: 14px;
+    }
+
+    .dining-section {
+        padding: 40px 5% 50px;
+    }
+    .dining-header h2 {
+        font-size: 36px;
+    }
+    .dining-header p {
+        font-size: 14px;
+    }
+    .dining-image {
+        height: 260px;
+    }
+    .dining-card-content p {
+        font-size: 14px;
+    }
+
+    .wellness-section {
+        padding: 45px 5%;
+    }
+    .wellness-title {
+        font-size: 36px;
+    }
+    .wellness-cards {
+        flex-direction: column;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+    .wellness-card {
+        width: 100%;
+    }
+    .wellness-card-inner {
+        min-height: 260px;
+    }
+
+    .neighborhood-section {
+        padding: 40px 5%;
+    }
+    .neighborhood-title {
+        font-size: 38px;
+    }
+    .neighborhood-list {
+        gap: 18px;
+    }
+    .neighborhood-icon {
+        width: 62px;
+        height: 62px;
+    }
+    .neighborhood-icon img {
+        width: 38px;
+        height: 38px;
+    }
+    .neighborhood-text h3 {
+        font-size: 18px;
+    }
+    .neighborhood-text p {
+        font-size: 14px;
+    }
+    .neighborhood-images {
+        gap: 10px;
+    }
+    .neighborhood-image {
+        width: calc(50% - 5px);
+        height: 230px;
+        border-radius: 14px;
+    }
+    .image-two {
+        margin-top: 25px;
+    }
+
+    .offer-section {
+        padding: 35px 5%;
+    }
+    .offer-container {
+        min-height: 280px;
+        padding: 25px 22px;
+        border-radius: 22px;
+        background-position: 60% center;
+    }
+    .offer-content h2 {
+        font-size: 36px;
+    }
+    .offer-content p {
+        font-size: 15px;
+    }
+    .offer-bottom {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        margin-top: 25px;
+    }
+    .offer-price span {
+        font-size: 15px;
+    }
+    .offer-price div {
+        font-size: 25px;
+    }
+    .offer-button {
+        min-width: 125px;
+        min-height: 42px;
+        padding: 10px 13px;
+        font-size: 14px;
+    }
+
+    .footer-section {
+        padding: 40px 5%;
+        background-size: 450px auto;
+    }
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 18px;
+    }
+    .footer-logo {
+        width: 175px;
+        height: 85px;
+    }
+    .footer-brand p,
+    .footer-links p,
+    .newsletter-content p {
+        font-size: 14px;
+    }
+    .footer-column h3 {
+        font-size: 25px;
+    }
+    .footer-social-icons a,
+    .footer-social-icons img {
+        width: 38px;
+        height: 38px;
+    }
+    .footer-newsletter {
+        min-height: 160px;
+    }
+    .newsletter-form input {
+        font-size: 14px;
+    }
+    .footer-bottom p,
+    .footer-credit span {
+        font-size: 14px;
+    }
+    .footer-credit img {
+        width: 85px;
+    }
 }

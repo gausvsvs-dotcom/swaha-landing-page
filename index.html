@@ -1,484 +1,400 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    
+
+    <title>Swaha Signatures</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-
-<div id="video-intro-overlay" class="video-intro-overlay">
-    <img src="assets/img/loadstart.gif" alt="Intro Animation" class="intro-gif-file">
-    <button id="skip-intro-btn" class="btn-skip-intro">Skip Intro</button>
-</div>
-<!-- HERO SECTION -->
-    <section id="hero" class="hero-section position-relative text-white">
-
-        <div class="hero-bg-overlay"></div>
-
-        <div class="container position-relative z-2 py-4">
-
-            <div class="row align-items-center mb-5">
-                <div class="col-md-4"></div> 
-                <div class="col-md-4 text-center">
-
-                    <img src="assets/img/swaha-logo.svg" alt="Swaha Signatures" class="hero-logo img-fluid">
-                </div>
-                <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
-
-                    <div class="dropdown d-inline-block">
-                        <button class="btn text-white dropdown-toggle border-0 bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            English
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Indonesian</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <div id="video-intro-overlay" class="video-intro-overlay">
+        <img src="assets/img/loadstart.gif" alt="Intro Animation" id="intro-gif" class="intro-gif-file">
+        <button id="skip-intro-btn" class="btn-skip-intro">Skip Intro</button>
+    </div>
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <nav class="hero-navbar">
+            <a href="#" class="brand-logo">
+                <img src="assets/img/swaha-logo.svg" alt="Swaha Signatures">
+            </a>
+            <div class="language-wrapper dropdown">
+                <button class="language-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    English
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item" href="#">English</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Indonesia</a>
+                    </li>
+                </ul>
             </div>
-
-            <div class="row align-items-end min-vh-75 pb-5">
-                <div class="col-md-12">
-
-                    <span class="text-uppercase tracking-widest text-orange fw-normal d-block mb-2">Your Very</span>
-                    
-                    <h1 class="hero-title text-uppercase fw-normal mb-3">Home</h1>
-                    
-                    <p class="hero-desc mb-4">
-                        To create a place that feels like home, but elevated.<br>
-                        Come for the Bali vibes, stay for the feeling of home.
-                    </p>
-
-                    <div class="d-flex flex-wrap align-items-center gap-4">
-                        <div>
-                            <span class="d-block text-xs text-muted-custom uppercase">Start From</span>
-                            <span class="fs-4 fw-normal">IDR </span><span class="fs-3 fw-bold">999,999+</span>
-                        </div>
-                        <div>
-                            <a href="#booking" class="btn btn-gradient-orange px-4 py-3 rounded-pill fw-bold text-white shadow">
-                                Book Your Stay
-                            </a>
-                        </div>
+        </nav>
+        <div class="container-fluid hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">
+                    YOUR VERY
+                </p>
+                <h1 class="hero-title">
+                    HOME
+                </h1>
+                <p class="hero-description">
+                    To create a place that feels like home, but elevated.
+                    <br>
+                    Come for the Bali vibes, stay for the feeling of home.
+                </p>
+                <div class="hero-bottom">
+                    <div class="hero-price">
+                        <span class="price-label">
+                            START FROM
+                        </span>
+                        <h2 class="price-value">
+                            IDR <strong>999,999+</strong>
+                        </h2>
                     </div>
+                    <a href="#rooms" class="booking-btn">
+                        Book Your Stay
+                    </a>
                 </div>
             </div>
         </div>
-
         <div class="hero-bottom-gradient"></div>
     </section>
-    <!-- SECTION 2: THE SWAHA STORY -->
-    <section id="about" class="story-section py-5">
-        <div class="container py-lg-5">
-            <div class="row align-items-center g-5">
-                
-                <div class="col-md-6">
-                    <div class="story-content-box">
-                      
-                        <span class="badge-story mb-3 d-inline-block">THE SWAHA STORY</span>
-                        
-                        <h2 class="story-title mb-4">Welcome to The Swaha Signatures</h2>
-                        
-                        <p class="story-desc text-muted mb-3">
-                            In the heart of Berawa, The Swaha Signatures was created with one simple vision: a place that feels like home but elevated. A tropical lifestyle hotel where contemporary design meets personalized hospitality. "Swaha" symbolizes sincerity, offering, and positive energy—the spirit behind every stay, where luxury means meaningful moments, not formality.
-                        </p>
-                        
-                        <p class="story-highlight fw-medium text-dark">
-                            You're Home!
-                        </p>
-                    </div>
+    
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-content">
+                <div class="story-heading">
+                    <span class="story-label">THE SWAHA STORY</span>
+                    <h2>
+                        Welcome to The Swaha Signatures
+                    </h2>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="image-collage position-relative mx-auto">
-                        <!-- Gambar Utama Hotel -->
-                        <img src="assets/img/hotel-building.png" alt="The Swaha Signatures Building" class="img-fluid rounded-4 main-hotel-img shadow-sm">
-                        
-                        <div class="sticky-note">
-                            <img src="assets/img/sticky-note.png" alt="Good stays, Better memories" class="img-fluid">
-                        </div>
-                        
-                        <div class="card-badge-overlay">
-                            <img src="assets/img/logo-card.png" alt="Swaha Signatures Berawa, Bali" class="img-fluid rounded-4 shadow">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- SECTION 3: OUR TYPE OF ROOMS -->
-<!-- SECTION 3: OUR TYPE OF ROOMS -->
-    <section id="rooms" class="rooms-section py-5" style="background-color: #F6F1EB;">
-        <div class="container py-lg-4" style="max-width: 1240px;">
-            
-            <!-- 1. Header Section (Judul & Tombol Panah Kanan-Kiri) -->
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-5 gap-4">
-                <div style="max-width: 631px;">
-                    <div class="d-inline-flex px-3 py-2 mb-3 rounded" style="background: rgba(239, 76, 37, 0.10);">
-                        <span style="color: #EF4C25; font-size: 16px; font-family: 'Calibri', sans-serif; font-weight: 400; letter-spacing: 0.16px;">STAY YOUR WAY</span>
-                    </div>
-                    <h2 class="mb-2" style="color: black; font-size: 50px; font-family: 'Zain', sans-serif; font-weight: 700; line-height: 52px; letter-spacing: 1px;">Our Type Of Rooms</h2>
-                    <p class="m-0" style="color: #999999; font-size: 16px; font-family: 'Calibri', sans-serif; font-weight: 400; letter-spacing: 0.48px;">Find a space that feels like home, with thoughtful details made for your perfect stay.</p>
-                </div>
-                
-                <!-- Tombol Navigasi Panah -->
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background: transparent;" aria-label="Previous">
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.5 9.5L4 6L7.5 2.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid black; background: transparent;" aria-label="Next">
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.5 2.5L8 6L4.5 9.5" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 2. Grid Card Kamar (3 Kolom Sesuai Figma) -->
-            <div class="row g-4 justify-content-center mb-5">
-                
-                <!-- Card 1: Deluxe Room -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card border-0 h-100 bg-white" style="border-radius: 20px; border: 1px solid #DDDDDD !important;">
-                        <img src="assets/img/image.png" class="card-img-top w-100" style="height: 253px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="Deluxe Room">
-                        <div class="card-body p-4 d-flex flex-column justify-content-between" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-                            <div class="d-flex flex-column gap-2 mb-4">
-                                <h3 class="m-0" style="color: black; font-size: 24px; font-family: 'Calibri', sans-serif; font-weight: 700;">Deluxe Room</h3>
-                                <p class="m-0" style="color: #999999; font-size: 16px; font-family: 'Calibri', sans-serif; font-weight: 400; line-height: 1.4;">A contemporary tropical retreat with a private balcony, designed for comfort and effortless relaxation in the heart of Berawa.</p>
-                            </div>
-                            <div>
-                                <a href="#contact" class="text-decoration-none fw-bold" style="color: #EF4C25; font-size: 18px; font-family: 'Calibri', sans-serif; letter-spacing: 0.18px;">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Grand Deluxe -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card border-0 h-100 bg-white" style="border-radius: 20px; border: 1px solid #DDDDDD !important;">
-                        <img src="assets/img/image (1).png" class="card-img-top w-100" style="height: 253px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="Grand Deluxe">
-                        <div class="card-body p-4 d-flex flex-column justify-content-between" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-                            <div class="d-flex flex-column gap-2 mb-4">
-                                <h3 class="m-0" style="color: black; font-size: 24px; font-family: 'Calibri', sans-serif; font-weight: 700;">Grand Deluxe</h3>
-                                <p class="m-0" style="color: #999999; font-size: 16px; font-family: 'Calibri', sans-serif; font-weight: 400; line-height: 1.4;">Refined interiors with a private balcony and exclusive access to a spacious shared terrace, reserved for only four rooms.</p>
-                            </div>
-                            <div>
-                                <a href="#contact" class="text-decoration-none fw-bold" style="color: #EF4C25; font-size: 18px; font-family: 'Calibri', sans-serif; letter-spacing: 0.18px;">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Junior Suite -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card border-0 h-100 bg-white" style="border-radius: 20px; border: 1px solid #DDDDDD !important;">
-                        <img src="assets/img/image (2).png" class="card-img-top w-100" style="height: 253px; object-fit: cover; border-top-left-radius: 20px; border-top-right-radius: 20px;" alt="Junior Suite">
-                        <div class="card-body p-4 d-flex flex-column justify-content-between" style="border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">
-                            <div class="d-flex flex-column gap-2 mb-4">
-                                <h3 class="m-0" style="color: black; font-size: 24px; font-family: 'Calibri', sans-serif; font-weight: 700;">Junior Suite</h3>
-                                <p class="m-0" style="color: #999999; font-size: 16px; font-family: 'Calibri', sans-serif; font-weight: 400; line-height: 1.4;">Experience elevated tropical living in the Junior Suite, featuring a spacious living area and a convenient pantry with a microwave.</p>
-                            </div>
-                            <div>
-                                <a href="#contact" class="text-decoration-none fw-bold" style="color: #EF4C25; font-size: 18px; font-family: 'Calibri', sans-serif; letter-spacing: 0.18px;">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- 3. Indikator Slider Bar di Bawah -->
-            <div class="d-flex justify-content-center align-items-center gap-2">
-                <div style="width: 30px; height: 6px; background: #133151; border-radius: 4px;"></div>
-                <div style="width: 30px; height: 6px; background: rgba(0, 0, 0, 0.10); border-radius: 4px;"></div>
-                <div style="width: 30px; height: 6px; background: rgba(0, 0, 0, 0.10); border-radius: 4px;"></div>
-                <div style="width: 30px; height: 6px; background: rgba(0, 0, 0, 0.10); border-radius: 4px;"></div>
-            </div>
-
-        </div>
-    </section>
-<!-- SECTION 4: DINING EXPERIENCES -->
-    <section id="dining" class="dining-section position-relative pb-5">
-        
-        <div class="dining-header-bg text-white text-center py-5">
-            <div class="container py-4">
-
-                <span class="badge-dining mb-3 d-inline-block">A TASTE OF BERAWA</span>
-                
-                <h2 class="dining-title mb-2">Dining Experiences</h2>
-                
-                <p class="dining-subtitle text-light mx-auto">
-                    Enjoy delicious flavors and relaxed dining moments inspired by the spirit of Bali.
+                <p class="story-description">
+                    In the heart of Berawa, The Swaha Signatures was created
+                    with one simple vision: a place that feels like home but
+                    elevated. A tropical lifestyle hotel where contemporary
+                    design meets personalized hospitality. "Swaha" symbolizes
+                    sincerity, offering, and positive energy — the spirit behind
+                    every stay, where luxury means meaningful moments, not
+                    formality.
+                    <br><br>
+                    You're Home!
                 </p>
             </div>
-        </div>
-
-        <div class="container dining-cards-container">
-            <div class="row g-5 justify-content-center">
-                
-                <!-- Item 1: Restaurant -->
-                <div class="col-md-6">
-                    <div class="dining-item h-100">
-                        <img src="assets/img/dining-1.png" class="img-fluid rounded-4 dining-img mb-4 w-100" alt="Restaurant">
-                        <div class="dining-content">
-                            <h3 class="dining-card-title h4 fw-bold mb-3">Restaurant</h3>
-                            <p class="dining-card-desc text-muted m-0">
-                                A contemporary all-day dining destination offering a delightful fusion of locally inspired and international flavours in a contemporary tropical setting. Start the day with a semi à la carte breakfast, where made-to-order signature dishes are complemented by a carefully curated buffet selection.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="dining-item h-100">
-                        <img src="assets/img/dining-2.png" class="img-fluid rounded-4 dining-img mb-4 w-100" alt="Crux">
-                        <div class="dining-content">
-                            <h3 class="dining-card-title h4 fw-bold mb-3">Crux</h3>
-                            <p class="dining-card-desc text-muted m-0">
-                                Inspired by the Southern Cross (Crux) constellation, a timeless guide for travelers, Crux is the social heart of The Swaha Signatures. Here, handcrafted cocktails, breathtaking sunsets, and meaningful connections come together to create unforgettable evenings above the vibrant energy of Berawa.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="story-images">
+                <img src="assets/img/hotel-building.png" alt="The Swaha Signatures Hotel" class="story-main-image">
+                <img src="assets/img/sticky-note.png" alt="The Swaha Story Note" class="story-note-image">
+                <img src="assets/img/logo-card.png" alt="The Swaha Signatures" class="story-logo-image">
             </div>
         </div>
     </section>
-  <!-- SECTION 5: WELLNESS & LEISURE -->
-    <section id="wellness" class="wellness-section py-4 ">
-        <div class="container py-lg-4">
-            <div class="row align-items-center g-3">
-                
-                <div class="col-lg-5">
-                    <div class="wellness-content pe-lg-4">
-                        <div class="badge-wrapper mb-3">
-                            <span class="badge-wellness d-inline-block">FIND YOUR CALM</span>
-                        </div>
-                        <h2 class="wellness-title mb-3">Wellness & Leisure</h2>
-                        <p class="wellness-desc text-muted m-0">
-                            From the fitness centre to the spa, the pool to the kids club, every space is shaped around a single idea
+
+    <section class="rooms-section">
+        <div class="rooms-container">
+            <div class="rooms-header">
+                <div class="rooms-heading">
+                    <span class="rooms-label">STAY YOUR WAY</span>
+                    <h2>Our Type Of Rooms</h2>
+                    <p>
+                        Find a space that feels like home, with thoughtful
+                        details made for your perfect stay.
+                    </p>
+                </div>
+                <div class="rooms-controls">
+                    <button class="rooms-arrow" id="rooms-prev" aria-label="Previous">
+                        <i class="bi bi-arrow-left"> ← </i>
+                    </button>
+                    <button class="rooms-arrow" id="rooms-next" aria-label="Next">
+                        <i class="bi bi-arrow-right"> → </i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="rooms-card-container">
+                <div class="room-card">
+                    <img src="assets/img/image.png" alt="Deluxe Room" class="room-image">
+                    <div class="room-card-content">
+                        <h3>Deluxe Room</h3>
+                        <p>
+                            A contemporary tropical retreat with a private
+                            balcony, designed for comfort and effortless
+                            relaxation in the heart of Berawa.
+                        </p>
+                        <a href="#contact" class="room-contact">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="assets/img/image (1).png" alt="Grand Deluxe Room" class="room-image">
+                    <div class="room-card-content">
+                        <h3>Grand Deluxe</h3>
+                        <p>
+                            Refined interiors with a private balcony and
+                            exclusive access to a spacious shared terrace,
+                            reserved for only four rooms.
+                        </p>
+                        <a href="#contact" class="room-contact">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="assets/img/image (2).png" alt="Junior Suite" class="room-image">
+                    <div class="room-card-content">
+                        <h3>Junior Suite</h3>
+                        <p>
+                            Experience elevated tropical living in the
+                            Junior Suite, featuring a spacious living area
+                            and a convenient pantry with a microwave.
+                        </p>
+                        <a href="#contact" class="room-contact">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms-pagination">
+                <span class="pagination-line active"></span>
+                <span class="pagination-line"></span>
+                <span class="pagination-line"></span>
+                <span class="pagination-line"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="dining-section">
+        <div class="dining-container">
+            <div class="dining-header">
+                <span class="dining-label">A TASTE OF BERAWA</span>
+                <h2>Dining Experiences</h2>
+                <p>
+                    Enjoy delicious flavors and relaxed dining moments
+                    inspired by the spirit of Bali.
+                </p>
+            </div>
+            <div class="dining-content">
+                <div class="dining-card">
+                    <img src="assets/img/dining-1.png" alt="Restaurant" class="dining-image">
+                    <div class="dining-card-content">
+                        <h3>Restaurant</h3>
+                        <p>
+                            A contemporary all-day dining destination offering
+                            a delightful fusion of locally inspired and
+                            international flavours in a contemporary tropical
+                            setting. Start the day with a semi à la carte
+                            breakfast, where made-to-order signature dishes
+                            are complemented by a carefully curated buffet
+                            selection.
                         </p>
                     </div>
                 </div>
-
-                <div class="col-lg-7">
-                    <div class="row g-3 justify-content-center">
-                        
-                        <div class="col-md-6">
-                            <div class="wellness-outer-card p-3 rounded-4 h-100">
-                                <div class="wellness-inner-card p-4 rounded-4 d-flex flex-column align-items-center text-center h-100">
-                                    <div class="icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shadow-sm">
-                                        <img src="assets/img/icon-1.png" alt="Swimming Pool" class="img-fluid" style="width: 52px; height: 52px;">
-                                    </div>
-                                    <h3 class="card-title h5 fw-bold mb-3 text-white">Rooftop Swimming Pool</h3>
-                                    <p class="card-text text-light small m-0">
-                                        Escape to our rooftop swimming pool, where panoramic views, tropical breezes, and Bali's vibrant atmosphere
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="wellness-outer-card p-3 rounded-4 h-100">
-                                <div class="wellness-inner-card p-4 rounded-4 d-flex flex-column align-items-center text-center h-100">
-                                    <div class="icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center mb-3 shadow-sm">
-                                        <img src="assets/img/icon-2.png" alt="Fitness Center" class="img-fluid" style="width: 38px; height: 38px;">
-                                    </div>
-                                    <h3 class="card-title h5 fw-bold mb-3 text-white">Fitness Center</h3>
-                                    <p class="card-text text-light small m-0">
-                                        Move, Recharge, and Feel Your Best. Maintain your wellness routine in our contemporary Fitness Centre
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
+                <div class="dining-card">
+                    <img src="assets/img/dining-2.png" alt="Crux" class="dining-image">
+                    <div class="dining-card-content">
+                        <h3>Crux</h3>
+                        <p>
+                            Inspired by the Southern Cross (Crux) constellation,
+                            a timeless guide for travelers, Crux is the social
+                            heart of The Swaha Signatures. Here, handcrafted
+                            cocktails, breathtaking sunsets, and meaningful
+                            connections come together to create unforgettable
+                            evenings above the vibrant energy of Berawa.
+                        </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- SECTION 6: DISCOVER THE NEIGHBORHOOD -->
-    <section id="neighborhood" class="neighborhood-section py-5 bg-light-cream" style="background-color: #FAF9F7;">
-        <div class="container py-lg-4">
-            <div class="row align-items-center g-4">
-                
-                <div class="col-lg-6">
-                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start align-items-center">
-                        <img src="assets/img/neighbor-1.png" alt="Pool Relax" class="neighborhood-img rounded-4 shadow-sm" style="width: 295px; height: 365px; object-fit: cover;">
-                        <img src="assets/img/neighbor-2.png" alt="Surfing" class="neighborhood-img rounded-4 shadow-sm" style="width: 295px; height: 366px; object-fit: cover;">
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="neighborhood-content ps-lg-3">
-
-                        <span class="badge-neighborhood mb-3 d-inline-block">EXPLORE YOUR WAY</span>
-                        
-                        <h2 class="neighborhood-title mb-4">Discover the neighborhood</h2>
-                        
-                        <div class="neighborhood-list d-flex flex-column gap-4">
-                            
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="neighborhood-icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 85px; height: 85px;">
-                                    <img src="assets/img/icon-beach.png" alt="Beach Icon" style="width: 45px; height: 45px; object-fit: contain;">
-                                </div>
-                                <div>
-                                    <h3 class="h5 fw-bold text-dark mb-1" style="font-family: 'Calibri', sans-serif; font-size: 24px;">5 Minutes to Berawa Beach</h3>
-                                    <p class="text-muted m-0" style="font-family: 'Calibri', sans-serif; font-size: 16px; line-height: 1.5;">Enjoy a relaxing walk, catch the sunset, or simply enjoy the ocean breeze at Berawa Beach.</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="neighborhood-icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 85px; height: 85px;">
-                                    <img src="assets/img/icon-club.png" alt="Beach Club Icon" style="width: 45px; height: 45px; object-fit: contain;">
-                                </div>
-                                <div>
-                                    <h3 class="h5 fw-bold text-dark mb-1" style="font-family: 'Calibri', sans-serif; font-size: 24px;">5 Minutes to Atlas & Finns Beach Club</h3>
-                                    <p class="text-muted m-0" style="font-family: 'Calibri', sans-serif; font-size: 16px; line-height: 1.5;">Discover a vibrant beachfront destination with pools, dining, entertainment, and sunset moments.</p>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="neighborhood-icon-circle bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm flex-shrink-0" style="width: 85px; height: 85px;">
-                                    <img src="assets/img/icon-palm.png" alt="Palm Icon" style="width: 45px; height: 45px; object-fit: contain;">
-                                </div>
-                                <div>
-                                    <h3 class="h5 fw-bold text-dark mb-1" style="font-family: 'Calibri', sans-serif; font-size: 24px;">10 Minutes to Batu Belig Beach</h3>
-                                    <p class="text-muted m-0" style="font-family: 'Calibri', sans-serif; font-size: 16px; line-height: 1.5;">Take a peaceful break by the beach, enjoy a beautiful sunset, and experience a more relaxed side of Bali.</p>
-                                </div>
-                            </div>
-
+    <section class="wellness-section">
+        <div class="wellness-container">
+            <div class="wellness-info">
+                <span class="wellness-label">FIND YOUR CALM</span>
+                <h2 class="wellness-title">Wellness & Leisure</h2>
+                <p class="wellness-description">
+                    From the fitness centre to the spa, the pool to the kids club,
+                    every space is shaped around a single idea
+                </p>
+            </div>
+            <div class="wellness-cards">
+                <div class="wellness-card">
+                    <div class="wellness-card-inner">
+                        <div class="wellness-icon">
+                            <img src="assets/img/icon-1.png" alt="Swimming Pool">
                         </div>
+                        <h3>Rooftop Swimming Pool</h3>
+                        <p>
+                            Escape to our rooftop swimming pool, where panoramic
+                            views, tropical breezes, and Bali's vibrant atmosphere
+                        </p>
                     </div>
                 </div>
-
+                <div class="wellness-card">
+                    <div class="wellness-card-inner">
+                        <div class="wellness-icon">
+                            <img src="assets/img/icon-2.png" alt="Fitness Center">
+                        </div>
+                        <h3>Fitness Center</h3>
+                        <p>
+                            Move, Recharge, and Feel Your Best. Maintain your
+                            wellness routine in our contemporary Fitness Centre
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- SECTION 7: SPECIAL OPENING OFFER (CTA BANNER) -->
-    <section id="offer" class="offer-section py-5">
-        <div class="container">
-            <div class="offer-banner rounded-5 p-4 p-md-5 position-relative overflow-hidden text-white d-flex align-items-center">
-                
-                <div class="row align-items-center justify-content-between w-100 position-relative z-2 g-4">
-                    
-                    <div class="col-lg-7">
-                        <div class="offer-text-content">
-                            <h2 class="offer-title mb-2">Special Opening Offer</h2>
-                            <p class="offer-desc m-0">Discover our latest offers and enjoy a little more from your stay at Swaha Signatures.</p>
+
+    <section class="neighborhood-section">
+        <div class="neighborhood-container">
+            <div class="neighborhood-images">
+                <img src="assets/img/neighbor-1.png" alt="Swimming Pool" class="neighborhood-image image-one">
+                <img src="assets/img/neighbor-2.png" alt="Beach Surfing" class="neighborhood-image image-two">
+            </div>
+            <div class="neighborhood-content">
+                <span class="neighborhood-label">EXPLORE YOUR WAY</span>
+                <h2 class="neighborhood-title">
+                    Discover the neighborhood
+                </h2>
+                <div class="neighborhood-list">
+                    <div class="neighborhood-item">
+                        <div class="neighborhood-icon">
+                            <img src="assets/img/icon-beach.png" alt="">
+                        </div>
+
+                        <div class="neighborhood-text">
+                            <h3>5 Minutes to Berawa Beach</h3>
+                            <p>
+                                Enjoy a relaxing walk, catch the sunset, or simply
+                                enjoy the ocean breeze at Berawa Beach.
+                            </p>
                         </div>
                     </div>
-
-                    <div class="col-lg-5">
-                        <div class="d-flex flex-wrap align-items-center justify-content-lg-end gap-4">
-  
-                            <div class="price-box">
-                                <span class="start-text d-block">Start From</span>
-                                <div class="price-value">
-                                    <span class="currency">IDR </span>
-                                    <span class="amount">999,999+</span>
-                                </div>
-                            </div>
-
-                            <a href="#book" class="btn-book-stay text-decoration-none">
-                                Book Your Stay
-                            </a>
+                    <div class="neighborhood-item">
+                        <div class="neighborhood-icon">
+                            <img src="assets/img/icon-club.png" alt="">
+                        </div>
+                        <div class="neighborhood-text">
+                            <h3>5 Minutes to Atlas &amp; Finns Beach Club</h3>
+                            <p>
+                                Discover a vibrant beachfront destination with
+                                pools, dining, entertainment, and sunset moments.
+                            </p>
                         </div>
                     </div>
-
+                    <div class="neighborhood-item">
+                        <div class="neighborhood-icon">
+                            <img src="assets/img/icon-palm.png" alt="">
+                        </div>
+                        <div class="neighborhood-text">
+                            <h3>10 Minutes to Batu Belig Beach</h3>
+                            <p>
+                                Take a peaceful break by the beach, enjoy a
+                                beautiful sunset, and experience a more relaxed
+                                side of Bali.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- FOOTER -->
-    <footer class="footer-section position-relative overflow-hidden py-5">
 
-        <img src="assets/img/footer-watermark.png" alt="" class="footer-watermark position-absolute top-0 start-50 translate-middle-x pe-none">
+    <section class="offer-section">
+        <div class="offer-container">
+            <div class="offer-content">
+                <h2>Special Opening Offer</h2>
+                <p>
+                    Discover our latest offers and enjoy a little more
+                    from your stay at Swaha Signatures.
+                </p>
+                <div class="offer-bottom">
+                    <div class="offer-price">
+                        <span>Start From</span>
+                        <div>
+                            IDR <strong>999,999+</strong>
+                        </div>
+                    </div>
+                    <a href="#" class="offer-button">Book Your Stay</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="container position-relative z-2">
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="assets/img/logo-swaha-dark.png" alt="Swaha Signatures" class="footer-logo">
 
-            <div class="row g-4 justify-content-between pb-4">
-                
-                <div class="col-lg-3 col-md-6">
-                    <img src="assets/img/logo-swaha-dark.png" alt="The Swaha Signatures" class="img-fluid mb-3" style="max-width: 230px;">
-                    <p class="footer-text m-0">
-                        Stay closer to what matters and experience Bali your way at Swaha Signatures
+                    <p>
+                        Stay closer to what matters and experience Bali
+                        your way at Swaha Signatures
                     </p>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="footer-heading mb-3">Contact</h4>
-                    <ul class="list-unstyled d-flex flex-column gap-3 m-0 footer-text">
-                        <li>
-                            <a href="mailto:info@theswahasignatures.com" class="text-decoration-none footer-link">info@theswahasignatures.com</a>
-                        </li>
-                        <li>
-                            <a href="tel:+6282221621654" class="text-decoration-none footer-link">+62 822-2162-1654</a>
-                        </li>
-                        <li>
-                            Jl Pantai Berawa No. 99 TSS, Tibubeneng Bali, 80361
-                        </li>
-                    </ul>
+                <div class="footer-column footer-contact">
+                    <h3>Contact</h3>
+                    <div class="footer-links">
+                        <p>info@theswahasignatures.com</p>
+                        <p>+62 822-2162-1654</p>
+                        <p>
+                            Jl Pantai Berawa No. 99 TSS,
+                            Tibubeneng Bali, 80361
+                        </p>
+                    </div>
                 </div>
-
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-heading mb-3">Follow Us</h4>
-                    <div class="d-flex align-items-center gap-2">
-                        <a href="#" class="social-icon-btn rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none" aria-label="TikTok">
-                            <img src="assets/img/tiktok.png" alt="TikTok" style="width: 39px; height: 39px;">
+                <div class="footer-column footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="TikTok">
+                            <img src="assets/img/tiktok.png" alt="TikTok">
                         </a>
-                        <a href="#" class="social-icon-btn rounded-circle d-flex align-items-center justify-content-center text-white text-decoration-none" aria-label="Instagram">
-                            <img src="assets/img/instagram.png" alt="Instagram" style="width: 39px; height: 39px;">
+                        <a href="#" aria-label="Instagram">
+                            <img src="assets/img/instagram.png" alt="Instagram">
                         </a>
                     </div>
                 </div>
+                <div class="footer-column footer-newsletter">
+                    <div class="newsletter-content">
+                        <h3>Newsletter</h3>
 
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="footer-heading mb-2">Newsletter</h4>
-                    <p class="footer-text mb-3">
-                        Discover special offers, local stories, and more from your home in Bali.
-                    </p>
+                        <p>
+                            Discover special offers, local stories,
+                            and more from your home in Bali.
+                        </p>
+                    </div>
                     <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" class="form-control newsletter-input" placeholder="Your Email" aria-label="Your Email" required>
-                            <button class="btn newsletter-btn d-flex align-items-center justify-content-center" type="submit" aria-label="Subscribe">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33334M12.6667 8L8.00004 12.6667" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                        </div>
+                        <input type="email" placeholder="Your Email" aria-label="Your Email">
+
+                        <button type="submit" aria-label="Subscribe">
+                            <span>→</span>
+                        </button>
                     </form>
                 </div>
-
             </div>
-
-            <hr class="footer-divider my-4">
-
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-2">
-                <p class="footer-copyright m-0">
-                    &copy; 2024 The Swaha Signatures. All rights reserved.
+            <div class="footer-bottom">
+                <p>
+                    The Swaha Signatures © 2026 All rights reserved.
                 </p>
-                <div class="d-flex align-items-center gap-2">
-                    <span class="footer-copyright">Design by</span>
-                    <img src="assets/img/logo-alamaya.png" alt="Alamaya" style="height: 23px; width: auto;">
+                <div class="footer-credit">
+                    <span>Design by</span>
+                    <img src="assets/img/logo-alamaya.png" alt="Alamaya">
                 </div>
             </div>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script src="js/script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -506,8 +422,9 @@
                 if (introOverlay.style.display !== "none") {
                     closeIntro();
                 }
-            }, 13000); 
+            }, 13000);
         });
-</script>
+    </script>
 </body>
+
 </html>
